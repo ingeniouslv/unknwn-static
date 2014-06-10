@@ -6,12 +6,14 @@ $(function() {
 
 $(window).load(function() {
 	initPath();
-	newsContentSetup()
+	newsContentSetup();
+	hideNav();
 });
 
 $(window).on("resize",function(){
   setPostHeights();
   newsContentSetup();
+  hideNav();
 });
 
 function initMenu() {
@@ -35,6 +37,29 @@ function initMenu() {
 		$('.scroller').removeClass('menuactive');
 		e.preventDefault();
 	}
+}
+
+function hideNav() {
+
+	if ($(window).width() >= 768) {
+		var lastScrollTop = 0;
+		$(window).scroll(function(event){
+			var st = $(this).scrollTop();
+
+			if (st > lastScrollTop && st > 60){
+				$('#header').addClass('navbar-hide');
+			} else {
+				$('#header').removeClass('navbar-hide');
+			}
+
+			lastScrollTop = st;
+		});
+
+		$('#header').hover(function() {
+			$(this).removeClass('navbar-hide');
+		});
+	}
+	
 }
 
 /* initiate the packing script */

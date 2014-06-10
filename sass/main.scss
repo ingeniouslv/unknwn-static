@@ -31,23 +31,32 @@ body,
 /* Header
 ---------------------------- */
 #header {
+	background: #fff;
+	border-bottom: 1px solid #c6d0da;
 	position: fixed;
 	top: 0;
 	width: 100%;
 	z-index: 12;
+	
+	@include transition(top 0.25s ease-out);
+	
+	&.navbar-hide {
+		top: -64px;
+	}
+	
 	.container {
 		position: relative;
 	}
 	.logo {
 		text-align: center;
 		.path-logo {
-			width: 105px;
+			width: 55px;
 			height: auto;
 			
 			@include transition(width 0.25s ease-out);
 			
 			&.shrink {
-				width: 75px;
+				width: 55px;
 			}
 		}
 	}
@@ -138,6 +147,7 @@ body,
 	}
 	.scroller-inner {
 		#contents {
+			margin-top: 75px;
 			margin-bottom: -1px;
 		}
 	}
