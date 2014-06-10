@@ -2,12 +2,14 @@ $(function() {
 	initMenu();
 	setPostHeights();
 	headerScroll();
+	preloader();
 });
 
 $(window).load(function() {
 	initPath();
 	newsContentSetup();
 	hideNav();
+	loaded();
 });
 
 $(window).on("resize",function(){
@@ -151,4 +153,15 @@ function newsContentSetup() {
 		winH = $(window).height();
 	$('section.post-content').css({ 'height': winH });
 	$('section.product-info').css({ 'height': winH });
+}
+
+function preloader() {
+	var preload = '<div id="preloader"><div class="loading"><img src="img/path-logo.png" class="img-responsive" style="-webkit-filter:invert(100%);" /></div></div>';
+	
+	$('body').append(preload);
+
+}
+
+function loaded() {
+	$('#preloader').delay(800).fadeOut(400);
 }
