@@ -2,7 +2,6 @@ $(function() {
 	initMenu();
 	setPostHeights();
 	headerScroll();
-	preloader();
 });
 
 $(window).load(function() {
@@ -155,13 +154,6 @@ function newsContentSetup() {
 	$('section.product-info').css({ 'height': winH });
 }
 
-function preloader() {
-	var preload = '<div id="preloader"><div class="loading"><img src="img/path-logo.png" class="img-responsive" style="-webkit-filter:invert(100%);" /></div></div>';
-	
-	$('body').append(preload);
-
-}
-
 function loaded() {
-	$('#preloader').delay(800).fadeOut(400);
+	$('#preloader').delay(400).fadeOut(400);
 }
