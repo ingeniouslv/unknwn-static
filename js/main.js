@@ -124,6 +124,6 @@ function setPostHeights() {
 function newsContentSetup() {
 	var footerH = $('#site-footer').height(),
 		winH = $(window).height();
-	$('article.post-text').css({ 'height': winH });
+	$('section.post-content').css({ 'height': winH });
 	$('section.product-info').css({ 'height': winH });
 }

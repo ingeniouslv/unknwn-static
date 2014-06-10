@@ -136,6 +136,11 @@ body,
 		@include transition(transform 0.3s linear);
 		@include translateX(115px);
 	}
+	.scroller-inner {
+		#contents {
+			margin-bottom: -1px;
+		}
+	}
 }
 
 
@@ -440,14 +445,16 @@ body.news { background: rgb(241, 241, 241); }
 	
 	.post-media {
 		text-align: center;
+		margin-bottom: 0;
 	}
 	
 	.post-content {
 		background: #fff;
 		height: 100%;
-		padding: 10% 2%;
+		display: flex !important;
+		align-items: center;
 		position: fixed;
-		right: 0;
+		left: 0;
 		top: 0;
 		overflow-y: scroll;
 		
